@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<!--<p th:text="${}"></p>-->
+<form name="registeration_form" th:method="POST" th:action="@{/auth/register}" th:object="${userDTO}">
+
+    <label for="username">Username:</label>
+    <br/>
+    <input type="text" th:field="*{username}" id="username">
+    <br/>
+
+    <label for="password">Password:</label>
+    <br/>
+    <input type="password" th:field="*{password}" id="password">
+    <br/>
+
+<!--    <label for="confirm_password">Repeat Password:</label>-->
+<!--    <br/>-->
+<!--    <input type="password" name="confirm_password" id="confirm_password">-->
+<!--    <br/>-->
+
+    <label for="email">Email:</label>
+    <br/>
+    <input type="email" th:field="*{email}" id="email">
+    <br/>
+
+    <label for="company_name">Company name:</label>
+    <br/>
+    <input type="text" th:field="*{company}" id="company_name">
+    <br/>
+
+    <input type="submit" value="Login">
+
+    <div th:if="${param.error}" style="color: red">
+        ERROR
+    </div>
+</form>
+</body>
+</html>
