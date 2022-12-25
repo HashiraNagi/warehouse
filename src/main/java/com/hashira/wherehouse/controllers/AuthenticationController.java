@@ -5,14 +5,12 @@ import com.hashira.wherehouse.dto.mappers.UserMapper;
 import com.hashira.wherehouse.models.User;
 import com.hashira.wherehouse.services.CompaniesService;
 import com.hashira.wherehouse.services.UsersService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -56,7 +54,7 @@ public class AuthenticationController {
 
         //TODO: write validation here
 
-        usersService.save(user);
+        usersService.saveOrUpdate(user);
 
         return null;
     }

@@ -1,5 +1,7 @@
 package com.hashira.wherehouse.controllers;
 
+import com.hashira.wherehouse.models.Company;
+import com.hashira.wherehouse.models.Item;
 import com.hashira.wherehouse.models.User;
 import com.hashira.wherehouse.repositories.UsersRepository;
 import com.hashira.wherehouse.services.CompaniesService;
@@ -51,6 +53,7 @@ public class WorkerController {
     @GetMapping("/companyItems")
     public String companyItemsPage(Model model){
         User user = userUtil.getUserFromPrincipal();
+        user.getCompany().getItems();
         model.addAttribute("user",user);
         return "companyItems";
     }

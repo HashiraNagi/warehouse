@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ADMIN
+<div th:text="${user.getUsername()}"></div>
+LIST OF ALL COMPANIES:
+<div>
+    <tr th:each="company : ${companies}">
+        <a th:text="${company.getName()}" th:href="@{/admin/company/{name} (name=${company.getName()})}"></a>
+    </tr>
+</div>
+
+</body>
+</html>

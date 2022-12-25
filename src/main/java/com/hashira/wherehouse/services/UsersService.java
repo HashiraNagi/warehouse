@@ -23,7 +23,8 @@ public class UsersService {
         return usersRepository.findAll();
     }
 
-    public void save(User user){
+    @Transactional
+    public void saveOrUpdate(User user){
         usersRepository.save(user);
     }
 

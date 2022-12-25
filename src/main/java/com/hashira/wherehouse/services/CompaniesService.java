@@ -5,6 +5,8 @@ import com.hashira.wherehouse.repositories.CompaniesRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 public class CompaniesService {
@@ -19,4 +21,7 @@ public class CompaniesService {
         return companiesRepository.findByName(name);
     }
 
+    public List<Company> findAll(){
+        return companiesRepository.findAll();
+    }
 }

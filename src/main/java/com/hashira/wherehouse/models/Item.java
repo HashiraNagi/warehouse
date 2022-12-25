@@ -35,11 +35,10 @@ public class Item {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "сompany_id",referencedColumnName = "id")
+    @JoinColumn(name = "company_id",referencedColumnName = "id")
     private Company owner;
 
     @Column(name = "quantity")
-    @NotEmpty(message = "quantity of this items should not be empty")
     private Integer quantity;
 
 }
